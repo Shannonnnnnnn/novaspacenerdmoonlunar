@@ -1,0 +1,479 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local Window = Rayfield:CreateWindow({
+   Name = "Lunar X",
+   LoadingTitle = "brr skibidi dop dop yes yes",
+   LoadingSubtitle = "lmao i farted to hard",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Big Hub"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "key to prove if ur cousin",
+      Subtitle = "boom tang tang boom tang toga loogie",
+      Note = "the hint is that its green and gas",
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"fart"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+-- TABS
+
+local Tab1 = Window:CreateTab("info", 4483362458) -- Title, Image
+local Tab1Section = Tab1:CreateSection("Info")
+
+local Tab2 = Window:CreateTab("Scripts", 4483362458) -- Title, Image
+local Tab2Section = Tab2:CreateSection("goofy ahh scripts")
+
+local Tab3 = Window:CreateTab("Games", 4483362458) -- Title, Image
+local Tab3Section = Tab3:CreateSection("gam scripts")
+
+local Tab5 = Window:CreateTab("Player", 4483362458) -- Title, Image
+local Tab5Section = Tab5:CreateSection("ur player")
+
+local Tab7 = Window:CreateTab("Settings", 4483362458) -- Title, Image
+local Tab7Section = Tab7:CreateSection("Settings")
+
+-- PLAYER TAB
+
+local Button = Tab5:CreateButton({
+   Name = "death",
+   Callback = function()
+   game.Players.LocalPlayer.Character.Humanoid.Health = 0
+   end,
+})
+
+local Input = Tab5:CreateInput({
+   Name = "Walk Speed",
+   PlaceholderText = "enter a number/amount of skibi toilets",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(value)
+   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+   end,
+})
+
+local Input = Tab5:CreateInput({
+   Name = "Jump Power",
+   PlaceholderText = "enter a number/amount of cameramans",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(value)
+   game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
+   end,
+})
+
+local Button = Tab5:CreateButton({
+   Name = "Drop Tool",
+   Callback = function()
+   game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Parent = game.Workspace
+   end,
+})
+
+local Button = Tab5:CreateButton({
+   Name = "Equip Tool",
+   Callback = function()
+   game.Players.LocalPlayer.Backpack:FindFirstChildOfClass("Tool").Parent = game.Players.LocalPlayer.Character
+   end,
+})
+
+-- GAMES
+
+local Label = Tab3:CreateLabel("Most Popular")
+
+local Button = Tab3:CreateButton({
+   Name = "Brookhaven",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/NewIceHub/main/Brookhaven"))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "Adopt Me",
+   Callback = function()
+   loadstring(game:HttpGet('https://gitfront.io/r/ReQiuYTPL/wFUydaK74uGx/hub/raw/ReQiuYTPLHub.lua'))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "Blox Fruits",
+   Callback = function()
+   _G.HohoVersion = "v3"
+loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI'))() 
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "Bedwars",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "MM2",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/ECCeYtXA"))()
+   end,
+})
+
+local Label = Tab3:CreateLabel("Games")
+
+local Button = Tab3:CreateButton({
+   Name = "Total Roblox Drama",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/kureu/Roblox-T.R.D-Camp-Script/main/Roblox%20T.R.D%20Camp%20Script"))();
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "Total Roblox Drama Movies",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/kureu/Roblox-T.R.D-Movies-Script/main/Protected_2790861193015493.lua"))();
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "Evade",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/StatiicBluey/Scripts/main/hydra%20network%20evade%20script"))();
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "Teamwork Puzzles 2",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe/ToraIsMe/main/0Teamwork"))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "Lucky Block Battlegrounds",
+   Callback = function()
+   loadstring(game:HttpGet("https://github.com/bruhhwtf/LUCKY-BLOCKS-Battlegrounds-GUI/raw/main/Main"))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "Altitorture",
+   Callback = function()
+   loadstring(game:HttpGet("https://github.com/KhSaeed90/Roblox/raw/workspace/14086581572"))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "Shadow Boxing",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/1f0yt/community/main/ShadowBoxing"))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "Doors",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/VaniaPerets/FolderGui-FolderHub/main/loader.lua", true))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "Pet Sim X",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/NukeVsCity/TheALLHACKLoader/main/NukeLoader", true))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "Piggy",
+   Callback = function()
+   loadstring(game:HttpGet(('https://raw.githubusercontent.com/lolpoppyus/Roblox-Lua/master/Piggy'),true))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "All Tycoon Script",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/U9WBdeFe"))()
+   end,
+})
+
+-- INFO
+
+local Label = Tab1:CreateLabel("created by shan")
+local Label = Tab1:CreateLabel("other is soapie")
+local Label = Tab1:CreateLabel("more cuming soon")
+local Button = Tab1:CreateButton({
+   Name = "Destroy GUI",
+   Callback = function()
+   Rayfield:Destroy()
+   end,
+})
+
+-- scriprs
+
+local Label = Tab2:CreateLabel("Useful Scripts")
+
+local Button = Tab2:CreateButton({
+   Name = "Keyboard Script",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "InfiniteYield",
+   Callback = function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Fly Script",
+   Callback = function()
+   --ARCEUS X FLY V2 SCRIPT BY me_ozoneYT
+loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\40\39\104\116\116\112\115\58\47\47\103\105\115\116\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\109\101\111\122\111\110\101\89\84\47\98\102\48\51\55\100\102\102\57\102\48\97\55\48\48\49\55\51\48\52\100\100\100\54\55\102\100\99\100\51\55\48\47\114\97\119\47\101\49\52\101\55\52\102\52\50\53\98\48\54\48\100\102\53\50\51\51\52\51\99\102\51\48\98\55\56\55\48\55\52\101\98\51\99\53\100\50\47\97\114\99\101\117\115\37\50\53\50\48\120\37\50\53\50\48\102\108\121\37\50\53\50\48\50\37\50\53\50\48\111\98\102\108\117\99\97\116\111\114\39\41\44\116\114\117\101\41\41\40\41\10\10")()
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Spy Chat",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Shannonnnnnnn/Chat-spy-/f9abf143a7d0f6e9b3e9692dc0fd3b1850f8b8af/Gay"))();
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "RTX Script",
+   Callback = function()
+   loadstring(game:HttpGet('https://pastebin.com/raw/Bkf0BJb3'))()
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Shiftlock FE",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Shannonnnnnnn/Jehdjefufg-/main/Eejhg%20fzx%20d"))()
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Spectate Script",
+   Callback = function()
+   local runDummyScript = function(f,scri)
+local oldenv = getfenv(f)
+local newenv = setmetatable({}, {
+__index = function(_, k)
+if k:lower() == 'script' then
+return scri
+else
+return oldenv[k]
+end
+end
+})
+setfenv(f, newenv)
+ypcall(function() f() end)
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting")) 
+mas.Name = "CompiledModel"
+o1 = Instance.new("ScreenGui")
+o2 = Instance.new("Frame")
+o3 = Instance.new("TextButton")
+o4 = Instance.new("TextButton")
+o5 = Instance.new("TextLabel")
+o6 = Instance.new("ImageButton")
+o7 = Instance.new("LocalScript")
+o1.Name = "SpectateGui"
+o1.Parent = mas
+o2.Name = "Bar"
+o2.Parent = o1
+o2.Position = UDim2.new(-1,-100,0.87999999523163,-50)
+o2.Size = UDim2.new(0,200,0,50)
+o2.Position = UDim2.new(-1,-100,0.87999999523163,-50)
+o2.BackgroundColor3 = Color3.new(0, 0, 0)
+o2.BackgroundTransparency = 0.20000000298023
+o2.BorderSizePixel = 5
+o3.Name = "Previous"
+o3.Parent = o2
+o3.Size = UDim2.new(0.25,0,1,0)
+o3.Text = "<"
+o3.BackgroundColor3 = Color3.new(0.52549, 0.52549, 0.52549)
+o3.BorderColor3 = Color3.new(0.509804, 0.796079, 1)
+o3.BorderSizePixel = 0
+o3.Font = Enum.Font.SourceSans
+o3.FontSize = Enum.FontSize.Size48
+o3.TextColor3 = Color3.new(1, 1, 1)
+o4.Name = "Next"
+o4.Parent = o2
+o4.Position = UDim2.new(1,0,0,0)
+o4.Size = UDim2.new(-0.25,0,1,0)
+o4.Text = ">"
+o4.Position = UDim2.new(1,0,0,0)
+o4.BackgroundColor3 = Color3.new(0.52549, 0.52549, 0.52549)
+o4.BorderColor3 = Color3.new(0.509804, 0.796079, 1)
+o4.BorderSizePixel = 0
+o4.Font = Enum.Font.SourceSans
+o4.FontSize = Enum.FontSize.Size48
+o4.TextColor3 = Color3.new(1, 1, 1)
+o5.Name = "Title"
+o5.Parent = o2
+o5.Position = UDim2.new(0.27500000596046,0,0,0)
+o5.Size = UDim2.new(0.44999998807907,0,1,0)
+o5.Text = ""
+o5.Position = UDim2.new(0.27500000596046,0,0,0)
+o5.BackgroundColor3 = Color3.new(1, 1, 1)
+o5.BackgroundTransparency = 1
+o5.Font = Enum.Font.SourceSans
+o5.FontSize = Enum.FontSize.Size14
+o5.TextColor3 = Color3.new(1, 1, 1)
+o5.TextScaled = true
+o5.TextWrapped = true
+o6.Name = "Button"
+o6.Parent = o1
+o6.Position = UDim2.new(0,0,0.5,-25)
+o6.Size = UDim2.new(0,50,0,50)
+o6.Position = UDim2.new(0,0,0.5,-25)
+o6.BackgroundColor3 = Color3.new(1, 1, 1)
+o6.BackgroundTransparency = 0.30000001192093
+o6.BorderSizePixel = 5
+o6.Image = "http://www.roblox.com/asset/?id=176106970"
+o7.Parent = o1
+table.insert(cors,coroutine.create(function()
+wait()
+runDummyScript(function()
+
+cam = game.Workspace.CurrentCamera
+
+local bar = script.Parent.Bar
+local title = bar.Title
+local prev = bar.Previous
+local nex = bar.Next
+local button = script.Parent.Button
+
+function get()
+	for _,v in pairs(game.Players:GetPlayers())do
+		if v.Name == title.Text then
+			return(_)
+		end
+	end
+end
+
+
+local debounce = false
+button.MouseButton1Click:connect(function()
+	if debounce == false then debounce = true
+		bar:TweenPosition(UDim2.new(.5,-100,0.88,-50),"In","Linear",1,true)
+		pcall(function()
+				title.Text = game.Players:GetPlayerFromCharacter(cam.CameraSubject.Parent).Name
+		end)
+	elseif debounce == true then debounce = false
+		pcall(function() cam.CameraSubject = game.Players.LocalPlayer.Character.Humanoid end)
+			bar:TweenPosition(UDim2.new(-1,-100,0.88,-50),"In","Linear",1,true)
+		end
+end)
+
+prev.MouseButton1Click:connect(function()
+	wait(.1)
+	local players = game.Players:GetPlayers()
+	local num = get()
+	if not pcall(function() 
+		cam.CameraSubject = players[num-1].Character.Humanoid
+		end) then
+		cam.CameraSubject = players[#players].Character.Humanoid
+	end
+pcall(function()
+				title.Text = game.Players:GetPlayerFromCharacter(cam.CameraSubject.Parent).Name
+		end)
+end)
+
+nex.MouseButton1Click:connect(function()
+	wait(.1)
+	local players = game.Players:GetPlayers()
+	local num = get()
+	if not pcall(function() 
+		cam.CameraSubject = players[num+1].Character.Humanoid
+		end) then
+		cam.CameraSubject = players[1].Character.Humanoid
+	end
+pcall(function()
+				title.Text = game.Players:GetPlayerFromCharacter(cam.CameraSubject.Parent).Name
+		end)
+end)
+
+
+end,o7)
+end))
+mas.Parent = workspace
+mas:MakeJoints()
+local mas1 = mas:GetChildren()
+for i=1,#mas1 do
+	mas1[i].Parent = game:GetService("Players").LocalPlayer.PlayerGui 
+	ypcall(function() mas1[i]:MakeJoints() end)
+end
+mas:Destroy()
+for i=1,#cors do
+coroutine.resume(cors[i])
+end
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "BTools Script",
+   Callback = function()
+   loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "TP Script",
+   Callback = function()
+   loadstring(game:HttpGet(("https://pastebin.com/raw/YNVbeqPy")))()
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Animation Script",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/Animation-Hub/main/Animation%20Gui", true))()
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Emote Script",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/eCpipCTH"))()
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "R6 Emote Script",
+   Callback = function()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/Shannonnnnnnn/Yuirgyuniserg/main/Vhyb"))();
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Hide Players",
+   Callback = function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Hide%20Players'))()
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Fake Chat",
+   Callback = function()
+   loadstring(game:HttpGet('https://pastebin.com/raw/MBpnp3yS'))()
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Invis Script",
+   Callback = function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/0Ben1/fe./dbb6ce6f6cee4f7a5c9e20d7b88e83db2a93bf25/Invisible%20GUI'))
+   end,
+})
