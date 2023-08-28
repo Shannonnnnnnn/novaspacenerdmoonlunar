@@ -1,22 +1,40 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Lunar X V2", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Shannonnnnnnn/Whyugayyyyyy/main/Hhhhushsuhushu"))();
+local Window = OrionLib:MakeWindow({Name = "Lunar X", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
-local Tab1 = Window:MakeTab({
-	Name = "Info",
+local Tab0 = Window:MakeTab({
+	Name = "Home",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-local Section = Tab1:AddSection({
-	Name = "Information"
+local Section = Tab0:AddSection({
+	Name = "Home"
 })
 
-local Tab2 = Window:MakeTab({
+local Tab1 = Window:MakeTab({
 	Name = "Scripts",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-local Section = Tab2:AddSection({
+local Section = Tab1:AddSection({
 	Name = "Scripts"
+})
+
+local Tab7 = Window:MakeTab({
+	Name = "FE Scripts",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab7:AddSection({
+	Name = "FE Scripts"
+})
+
+local Tab6 = Window:MakeTab({
+	Name = "Hubs",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab6:AddSection({
+	Name = "Hubs"
 })
 
 local Tab3 = Window:MakeTab({
@@ -28,16 +46,45 @@ local Section = Tab3:AddSection({
 	Name = "Games"
 })
 
+local Tab5 = Window:MakeTab({
+	Name = "Animations",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab5:AddSection({
+	Name = "Animations"
+})
+
 local Tab4 = Window:MakeTab({
-	Name = "Player",
+	Name = "Misc",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 local Section = Tab4:AddSection({
-	Name = "Player"
+	Name = "Misc"
+})
+
+local Tab8 = Window:MakeTab({
+	Name = "Credits",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab8:AddSection({
+	Name = "Credits"
+})
+
+local Tab9 = Window:MakeTab({
+	Name = "Settings",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab9:AddSection({
+	Name = "Settings"
 })
 
 -- player
+
+Tab4:AddLabel("Player")
 
 Tab4:AddButton({
 	Name = "Reset Button",
@@ -73,6 +120,90 @@ Tab4:AddTextbox({
 	end	  
 })
 
+Tab4:AddTextbox({
+	Name = "Gravity",
+	Default = "Enter Number",
+	TextDisappear = true,
+	Callback = function(newGravity)
+		game.Workspace.Gravity = newGravity
+	end	  
+})
+
+Tab4:AddLabel("Server")
+
+Tab4:AddButton({
+	Name = "Rejoin",
+	Callback = function()
+      		local serverId = game.JobId
+    game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, serverId, player)
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Players In Server",
+	Callback = function()
+      		-- Create a ScreenGui to hold the GUI elements
+local gui = Instance.new("ScreenGui")
+gui.Parent = game.Players.LocalPlayer.PlayerGui
+
+-- Create a Frame inside the ScreenGui
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(1, 0, 0.1, 0)
+frame.Position = UDim2.new(0, 0, 0.9, 0)
+frame.BackgroundTransparency = 0.5
+frame.BackgroundColor3 = Color3.new(0, 0, 1)
+frame.Parent = gui
+
+-- Create a Label inside the Frame
+local label = Instance.new("TextLabel")
+label.Size = UDim2.new(0.8, 0, 1, 0)
+label.Position = UDim2.new(0.05, 0, 0, 0)
+label.BackgroundTransparency = 1
+label.FontSize = Enum.FontSize.Size18
+label.TextColor3 = Color3.new(1, 1, 1)
+label.Parent = frame
+
+-- Create a Close button inside the Frame
+local closeButton = Instance.new("TextButton")
+closeButton.Size = UDim2.new(0.1, 0, 1, 0)
+closeButton.Position = UDim2.new(0.85, 0, 0, 0)
+closeButton.Text = "Close"
+closeButton.FontSize = Enum.FontSize.Size18
+closeButton.TextColor3 = Color3.new(1, 1, 1)
+closeButton.BackgroundColor3 = Color3.new(0.5, 0.5, 0.5)
+closeButton.Parent = frame
+
+-- Function to update the label with player count
+local function updatePlayerCount()
+    local playerCount = #game.Players:GetPlayers()
+    label.Text = "Players in server: " .. playerCount
+end
+
+-- Function to animate the frame fade-out
+local function animateFadeOut()
+    for i = 1, 10 do
+        frame.BackgroundTransparency = i / 10
+        wait(0.05)
+    end
+    gui:Destroy()
+end
+
+-- Connect the button to close the GUI and trigger animation
+closeButton.MouseButton1Click:Connect(function()
+    animateFadeOut()
+end)
+
+-- Initial update and update every second
+updatePlayerCount()
+while wait(1) do
+    updatePlayerCount()
+end
+
+  	end    
+})
+
+Tab4:AddLabel("Items")
+
 Tab4:AddButton({
 	Name = "Equip Tool",
 	Callback = function()
@@ -89,7 +220,9 @@ Tab4:AddButton({
 
 -- games
 
-Tab3:AddLabel("Brookhaven 🏡RP")
+Tab6:AddParagraph("Alert!","Keep in mind that some of these scripts dont work or its old")
+
+Tab3:AddLabel("Brookhaven RP")
 
 Tab3:AddButton({
 	Name = "IceHub",
@@ -274,57 +407,73 @@ Tab3:AddButton({
   	end    
 })
 
+Tab3:AddLabel("Rogue Demon")
+
+Tab3:AddButton({
+	Name = "Rogue Demon Script",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/itsyouranya/free/main/roguedemon.lua'),true))()
+  	end    
+})
+
+Tab3:AddLabel("Pop It Trading")
+
+Tab3:AddButton({
+	Name = "Pop It Trading",
+	Callback = function()
+      		_G.credits = "Credits to iShield. DISCORD SERVER INVITE LINK: https://discord.gg/x57Xk65xZs"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/iShield2005/scripts/master/shieldhubloader2"))()
+  	end    
+})
+
 -- info
 
-Tab1:AddLabel("Made By Shan")
-Tab1:AddLabel("Helper Is Nova")
-Tab1:AddLabel("Lunar X V2")
+Tab8:AddParagraph("What is Lunar X?","Lunar X Is A Script Hub Created by Shan And Nova, Lunar X Has A Lot Of Scripts And Other Stuff! [Lunar X, Script Hub]")
+
+Tab8:AddParagraph("Credits","created by shan the burper and nova the space nerd")
 
 -- Scripts
 
-Tab2:AddButton({
+Tab6:AddParagraph("Alert!","Keep in mind that some of these scripts dont work or its old")
+
+Tab1:AddLabel("Useful Scripts")
+
+Tab1:AddButton({
 	Name = "Keyboard",
 	Callback = function()
       		loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
   	end    
 })
 
-Tab2:AddButton({
+Tab1:AddButton({
 	Name = "InfiniteYield",
 	Callback = function()
       		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
   	end    
 })
 
-Tab2:AddButton({
+Tab1:AddButton({
 	Name = "Fly Script",
 	Callback = function()
       		loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro69Yes/sussy-Script/main/SecuredFlyGuiv3.lua'))()
   	end    
 })
 
-Tab2:AddButton({
+Tab1:AddButton({
 	Name = "Spy Chat",
 	Callback = function()
       		loadstring(game:HttpGet("https://raw.githubusercontent.com/Shannonnnnnnn/Chat-spy-/f9abf143a7d0f6e9b3e9692dc0fd3b1850f8b8af/Gay"))();
   	end    
 })
 
-Tab2:AddButton({
-	Name = "RTX Script",
-	Callback = function()
-      		loadstring(game:HttpGet('https://pastebin.com/raw/Bkf0BJb3'))()
-  	end    
-})
-
-Tab2:AddButton({
+Tab1:AddButton({
 	Name = "Shiftlock FE",
 	Callback = function()
       		loadstring(game:HttpGet("https://raw.githubusercontent.com/Shannonnnnnnn/Jehdjefufg-/main/Eejhg%20fzx%20d"))()
   	end    
 })
 
-Tab2:AddButton({
+Tab1:AddButton({
 	Name = "Spectate Script",
 	Callback = function()
       		local runDummyScript = function(f,scri)
@@ -485,94 +634,130 @@ end
   	end    
 })
 
-Tab2:AddButton({
-	Name = "BTools",
-	Callback = function()
-      		loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
-  	end    
-})
-
-Tab2:AddButton({
+Tab1:AddButton({
 	Name = "TP GUI",
 	Callback = function()
       		loadstring(game:HttpGet(("https://pastebin.com/raw/YNVbeqPy")))()
   	end    
 })
 
-Tab2:AddButton({
-	Name = "Animation Script",
-	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/Animation-Hub/main/Animation%20Gui", true))()
-  	end    
-})
-
-Tab2:AddButton({
-	Name = "Emote Script",
-	Callback = function()
-      		loadstring(game:HttpGet("https://pastebin.com/raw/eCpipCTH"))()
-  	end    
-})
-
-Tab2:AddButton({
-	Name = "R6 Emotes",
-	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Shannonnnnnnn/Yuirgyuniserg/main/Vhyb"))();
-  	end    
-})
-
-Tab2:AddButton({
+Tab1:AddButton({
 	Name = "Hide Players",
 	Callback = function()
       		loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Hide%20Players'))()
   	end    
 })
 
-Tab2:AddButton({
-	Name = "Fake Chat",
-	Callback = function()
-      		loadstring(game:HttpGet('https://pastebin.com/raw/MBpnp3yS'))()
-  	end    
-})
-
-Tab2:AddButton({
-	Name = "Invisible Script FE",
-	Callback = function()
-      		loadstring(game:HttpGet('https://raw.githubusercontent.com/0Ben1/fe./dbb6ce6f6cee4f7a5c9e20d7b88e83db2a93bf25/Invisible%20GUI'))()
-  	end    
-})
-
-Tab2:AddButton({
-	Name = "VHUB",
-	Callback = function()
-      		 loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/2642/Created/VHub"))()
-  	end    
-})
-
-Tab2:AddButton({
-	Name = "Universal Hub FE",
-	Callback = function()
-      		loadstring(game:HttpGet('https://raw.githubusercontent.com/Dvrknvss/UniversalFEScriptHub/main/Script'))()
-  	end    
-})
-
-Tab2:AddButton({
+Tab1:AddButton({
 	Name = "Noclip",
 	Callback = function()
       		loadstring(game:HttpGet("https://pastebin.com/raw/B5xRxTnk",true))()
   	end    
 })
 
-Tab2:AddButton({
+Tab1:AddButton({
 	Name = "Anti Fling",
 	Callback = function()
       	loadstring(game:HttpGet(('https://pastebin.com/raw/GxdesRQx'),true))()	
   	end    
 })
 
-Tab2:AddButton({
+Tab1:AddButton({
+	Name = "Freecam Script",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe/main/Freecam", true))()
+  	end    
+})
+
+Tab1:AddLabel("Troll Scripts")
+
+Tab1:AddButton({
+	Name = "BTools",
+	Callback = function()
+      		loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Fake Chat",
+	Callback = function()
+      		loadstring(game:HttpGet('https://pastebin.com/raw/MBpnp3yS'))()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Invisible Script FE",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/0Ben1/fe./dbb6ce6f6cee4f7a5c9e20d7b88e83db2a93bf25/Invisible%20GUI'))()
+  	end    
+})
+
+Tab1:AddButton({
 	Name = "Spiderman Script",
 	Callback = function()
       		loadstring(game:HttpGet(('https://pastebin.com/raw/2X0hKUgq'),true))()
       loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
   	end    
 })
+
+Tab1:AddButton({
+	Name = "Mimic/Mock Script",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe./8fb5ed20fb168d1ae3044ede45b90f67e3fb37a2/file'),true))()
+  	end    
+})
+
+-- hubs
+
+Tab6:AddParagraph("Alert!","Keep in mind that some of these scripts dont work or its old")
+
+Tab6:AddButton({
+	Name = "Universal FE Hub",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/Dvrknvss/UniversalFEScriptHub/main/Script'))()
+  	end    
+})
+
+Tab6:AddButton({
+	Name = "VHUB",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/2642/Created/VHub"))()
+  	end    
+})
+
+Tab6:AddButton({
+	Name = "OrangeX Hub V4",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/ImJosh66/OrangeX-Hub-V4/main/Protected%20V4%20OrangeX%20TOP.txt"))()
+  	end    
+})
+
+Tab6:AddButton({
+	Name = "GigaChad Hub",
+	Callback = function()
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/OWJBWKQLAISH/GigaChad-Hub/main/Protected_3038811338432694.lua.txt"))()	
+  	end    
+})
+
+Tab6:AddButton({
+	Name = "GhostHub",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))()
+  	end    
+})
+
+Tab6:AddButton({
+	Name = "Acrylix GUI Hub",
+	Callback = function()
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/HubbyScripts/FE-Trolling-Hub/main/source"))()	
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "Delux Hub",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://pastebin.com/raw/dApTQQ51'),true))()
+  	end    
+})
+
+-- home
